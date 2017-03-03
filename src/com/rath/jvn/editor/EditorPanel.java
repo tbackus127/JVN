@@ -1,6 +1,9 @@
 
 package com.rath.jvn.editor;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
 import javax.swing.JTabbedPane;
 
 import com.rath.jvn.editor.flow.FlowEditorPanel;
@@ -21,10 +24,10 @@ public class EditorPanel extends JTabbedPane {
   /**
    * Default constructor.
    */
-  public EditorPanel() {
+  public EditorPanel(final Dimension winSize) {
     super();
 
-    final SceneEditorPanel scPanel = new SceneEditorPanel();
+    final SceneEditorPanel scPanel = new SceneEditorPanel(winSize);
     addTab("Scene 1", scPanel);
 
     final FlowEditorPanel flPanel = new FlowEditorPanel();

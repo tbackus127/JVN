@@ -2,8 +2,8 @@
 package com.rath.jvn.editor;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 
@@ -16,10 +16,16 @@ import javax.swing.JFrame;
 public class EditorFrame extends JFrame {
 
   /** The preferred size of the window. */
-  private static final transient Dimension PREFERRED_DIM = new Dimension(1024, 800);
+  public static final transient Dimension PREFERRED_DIM = new Dimension(1280, 720);
 
   /** The minimum size of the window. */
-  private static final transient Dimension MIN_DIM = new Dimension(800, 600);
+  public static final transient Dimension MIN_DIM = new Dimension(800, 600);
+
+  /** Relative location of the horizontal divider. */
+  public static final transient double DIV_HORIZ_PERC = 0.8D;
+
+  /** Relative location of the vertical divider. */
+  public static final transient double DIV_VERT_PERC = 0.3D;
 
   /** The program version string. */
   private static final String PROGRAM_VERSION = "dev03032017";
@@ -39,8 +45,9 @@ public class EditorFrame extends JFrame {
   public EditorFrame() {
     super(PROGRAM_NAME_STRING);
 
-    // TODO: Remove once done resizing
-    getContentPane().setBackground(Color.BLACK);
+    setLayout(new GridLayout());
+    setMinimumSize(MIN_DIM);
+    setSize(PREFERRED_DIM);
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
@@ -48,9 +55,12 @@ public class EditorFrame extends JFrame {
     final EditorMenuBar menuBar = new EditorMenuBar();
     setJMenuBar(menuBar);
 
-    final EditorPanel tabPanel = new EditorPanel();
+    final Dimension windowDim = this.getSize();
+    System.out.println(windowDim);
+    final EditorPanel tabPanel = new EditorPanel(windowDim);
     add(tabPanel, BorderLayout.CENTER);
 
+    pack();
     setVisible(true);
   }
 

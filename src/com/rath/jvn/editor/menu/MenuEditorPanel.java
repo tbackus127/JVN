@@ -5,6 +5,8 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
+import com.rath.jvn.editor.EditorFrame;
+
 /**
  * This class acts as a wrapper panel for the Scene editor.
  * 
@@ -21,6 +23,7 @@ public class MenuEditorPanel extends JPanel {
    */
   public MenuEditorPanel() {
     super();
+    setMinimumSize(EditorFrame.MIN_DIM);
     setOpaque(true);
     setBackground(Color.ORANGE);
     setVisible(true);

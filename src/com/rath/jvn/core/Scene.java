@@ -38,6 +38,9 @@ public class Scene extends AbstractScene implements Serializable {
    * @param d the prepackaged scene data.
    */
   public Scene(final SceneData d) {
+
+    if (d == null) return;
+
     sceneName = d.getSceneName();
     this.spriteCount = d.getSpriteCount();
     this.bgID = d.getBgID();
@@ -137,5 +140,14 @@ public class Scene extends AbstractScene implements Serializable {
    */
   public final String getCurrentText() {
     return this.script[this.currentQuote];
+  }
+
+  /**
+   * Gets the scene's script.
+   * 
+   * @return an array of Strings.
+   */
+  public String[] getScript() {
+    return this.script;
   }
 }
