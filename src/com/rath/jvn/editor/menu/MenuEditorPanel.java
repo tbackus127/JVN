@@ -1,5 +1,5 @@
 
-package com.rath.jvn.editor.scene;
+package com.rath.jvn.editor.menu;
 
 import java.awt.Color;
 
@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  * @author Tim Backus tbackus127@gmail.com
  *
  */
-public class SceneEditorPanel extends JPanel {
+public class MenuEditorPanel extends JPanel {
 
   /** Serial version UID. */
   private static final long serialVersionUID = 1L;
@@ -19,17 +19,10 @@ public class SceneEditorPanel extends JPanel {
   /**
    * Default constructor.
    */
-  public SceneEditorPanel() {
+  public MenuEditorPanel() {
     super();
     setOpaque(true);
-    setBackground(Color.CYAN);
-    
-    final SceneEditorPanelTop topPanel = new SceneEditorPanelTop();
-    add(topPanel);
-    
-    final SceneEditorPanelBottom botPanel = new SceneEditorPanelBottom();
-    add(botPanel);
-    
+    setBackground(Color.ORANGE);
     setVisible(true);
   }
 

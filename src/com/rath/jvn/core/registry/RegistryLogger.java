@@ -1,4 +1,4 @@
-package com.rath.jvn.core;
+package com.rath.jvn.core.registry;
 
 
 public class RegistryLogger {

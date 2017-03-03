@@ -1,4 +1,4 @@
-package com.rath.jvn.gui;
+package com.rath.jvn.game;
 
 
 public class GameFrame {
