@@ -14,13 +14,13 @@ import com.rath.jvn.core.Scene;
  *
  */
 public class SceneEditorPreviewPanel extends JPanel {
-  
+
   /** Serial version UID. */
   private static final long serialVersionUID = 1L;
-  
+
   /** The current Scene data. */
   private Scene scene;
-  
+
   /**
    * Default constructor.
    */
@@ -28,7 +28,7 @@ public class SceneEditorPreviewPanel extends JPanel {
     super();
     this.scene = sc;
   }
-  
+
   /**
    * Updates the preview panel.
    * 
@@ -37,7 +37,7 @@ public class SceneEditorPreviewPanel extends JPanel {
   public void updateScene(final Scene sc) {
     this.scene = sc;
   }
-  
+
   /**
    * Rendering method.
    * 
@@ -45,6 +45,6 @@ public class SceneEditorPreviewPanel extends JPanel {
    */
   @Override
   public void paintComponent(Graphics g) {
-    
+
   }
 }

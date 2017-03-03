@@ -1,6 +1,6 @@
 package com.rath.jvn.core;
 
 
-public class Coord {
+public class RegistryLogger {
   
 }
