@@ -56,7 +56,6 @@ public class EditorFrame extends JFrame {
     setJMenuBar(menuBar);
 
     final Dimension windowDim = this.getSize();
-    System.out.println(windowDim);
     final EditorPanel tabPanel = new EditorPanel(windowDim);
     add(tabPanel, BorderLayout.CENTER);
 

@@ -2,6 +2,7 @@
 package com.rath.jvn.editor;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JMenu;
@@ -67,9 +68,38 @@ public class EditorMenuBar extends JMenuBar {
     final JMenuItem closeProjItem = new JMenuItem("Close Project");
     closeProjItem.getAccessibleContext().setAccessibleDescription("Closes the project and exits the program.");
     closeProjItem.setMnemonic(KeyEvent.VK_X);
+    closeProjItem.addActionListener(new ActionListener() {
+
+      @Override
+      public void actionPerformed(ActionEvent evt) {
+
+        // TODO: Do something more elegant here (text box about saving work)
+        System.exit(0);
+      }
+
+    });
     fileMenu.add(closeProjItem);
 
     add(fileMenu);
+
+    // Edit
+    final JMenu editMenu = new JMenu("Edit");
+    editMenu.setMnemonic(KeyEvent.VK_E);
+
+    final JMenuItem undoItem = new JMenuItem("Undo");
+    undoItem.getAccessibleContext().setAccessibleDescription("Undo the latest change to the project.");
+    undoItem.setMnemonic(KeyEvent.VK_Z);
+    undoItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
+    editMenu.add(undoItem);
+
+    final JMenuItem redoItem = new JMenuItem("Redo");
+    redoItem.getAccessibleContext().setAccessibleDescription("Redo the last change that was un-did.");
+    redoItem.setMnemonic(KeyEvent.VK_Y);
+    redoItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y, ActionEvent.CTRL_MASK));
+    editMenu.add(redoItem);
+
+    add(editMenu);
+
     setVisible(true);
 
   }
