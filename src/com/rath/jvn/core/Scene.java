@@ -10,37 +10,37 @@ import java.io.Serializable;
  *
  */
 public class Scene extends AbstractScene implements Serializable {
-
+  
   /** Serial version UID. */
   private static final long serialVersionUID = 1L;
-
+  
   /** Number of sprite positions. */
   private int spriteCount = -1;
-
+  
   /** Sprites by ID in their positions as indeces in the array. */
   private int[] sprites = null;
-
+  
   /** Currently shown background image. */
   private int bgID = -1;
-
+  
   /** Currently playing background music. */
   private int bgmID = -1;
-
+  
   /** The current position in the script. */
   private int currentQuote = 0;
-
+  
   /** The script data as an in-order array. */
   private String[] script;
-
+  
   /**
    * Default constructor.
    * 
    * @param d the prepackaged scene data.
    */
   public Scene(final SceneData d) {
-
+    
     if (d == null) return;
-
+    
     sceneName = d.getSceneName();
     this.spriteCount = d.getSpriteCount();
     this.bgID = d.getBgID();
@@ -48,7 +48,7 @@ public class Scene extends AbstractScene implements Serializable {
     this.currentQuote = d.getCurrentQuote();
     this.script = d.getScript();
   }
-
+  
   /**
    * Gets the background image ID.
    * 
@@ -57,7 +57,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final int getBG() {
     return this.bgID;
   }
-
+  
   /**
    * Sets the background image ID.
    * 
@@ -66,7 +66,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final void setBG(final int id) {
     this.bgID = id;
   }
-
+  
   /**
    * Gets the ID of the currently playing song.
    * 
@@ -75,7 +75,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final int getBgmID() {
     return bgmID;
   }
-
+  
   /**
    * Sets the ID of the currently playing song.
    * 
@@ -84,7 +84,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final void setBgmID(int bgmID) {
     this.bgmID = bgmID;
   }
-
+  
   /**
    * Gets the current number of sprite positions.
    * 
@@ -93,7 +93,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final int getSpriteCount() {
     return this.spriteCount;
   }
-
+  
   /**
    * Sets the number of available sprite positions.
    * 
@@ -102,7 +102,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final void setSpritePosCount(final int count) {
     this.spriteCount = count;
   }
-
+  
   /**
    * Removes a sprite from the sprite array.
    * 
@@ -110,10 +110,10 @@ public class Scene extends AbstractScene implements Serializable {
    */
   public final void eraseSprite(final int pos) {
     this.sprites[pos] = -1;
-
+    
     // TODO: Integrate with registry system.
   }
-
+  
   /**
    * Sets a sprite to be rendered.
    * 
@@ -122,17 +122,17 @@ public class Scene extends AbstractScene implements Serializable {
    */
   public final void setSprite(final int pos, final int id) {
     this.sprites[pos] = id;
-
+    
     // TODO: Integrate with registry system.
   }
-
+  
   /**
    * Sets the current text to the next quote.
    */
   public final void advanceText() {
     this.currentQuote++;
   }
-
+  
   /**
    * Gets the current quote.
    * 
@@ -141,7 +141,7 @@ public class Scene extends AbstractScene implements Serializable {
   public final String getCurrentText() {
     return this.script[this.currentQuote];
   }
-
+  
   /**
    * Gets the scene's script.
    * 
@@ -149,5 +149,12 @@ public class Scene extends AbstractScene implements Serializable {
    */
   public String[] getScript() {
     return this.script;
+  }
+  
+  /**
+   * Writes this scene's data to file.
+   */
+  public void writeScene() {
+    
   }
 }

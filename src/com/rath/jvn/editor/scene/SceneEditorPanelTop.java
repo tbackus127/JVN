@@ -1,7 +1,6 @@
 
 package com.rath.jvn.editor.scene;
 
-import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JSplitPane;
@@ -17,20 +16,18 @@ import com.rath.jvn.game.GamePanel;
  *
  */
 public class SceneEditorPanelTop extends JSplitPane {
-
+  
   private static final long serialVersionUID = 1L;
-
+  
   public SceneEditorPanelTop(final Dimension winSize) {
     super();
-    setOpaque(true);
-    setBackground(Color.RED);
-
+    
     final SceneEditorScriptPanel scrPanel = new SceneEditorScriptPanel(winSize);
     setLeftComponent(scrPanel);
-
+    
     final GamePanel gPanel = new GamePanel(new Scene(null));
     setRightComponent(gPanel);
-
+    
     this.setVisible(true);
   }
   
@@ -46,5 +43,5 @@ public class SceneEditorPanelTop extends JSplitPane {
       }
     });
   }
-
+  
 }
