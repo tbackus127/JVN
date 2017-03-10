@@ -2,9 +2,10 @@
 package com.rath.jvn.editor.scene;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,7 +25,7 @@ public class SceneEditorScriptPanel extends JPanel {
   private static final long serialVersionUID = 1L;
 
   /** The scene's script. */
-  private String[] script;
+  private ArrayList<String> script;
 
   /** The scene's script box. */
   private final JList<String> quoteList;
@@ -38,25 +39,25 @@ public class SceneEditorScriptPanel extends JPanel {
    */
   public SceneEditorScriptPanel(final Dimension winSize, final Scene sc) {
     super();
-    setOpaque(true);
-    setBackground(Color.CYAN);
     setLayout(new BorderLayout());
 
-    if (sc == null) {
-      this.script = new String[256];
-      for(int i = 0; i < this.script.length; i++) {
-        this.script[i] = "";
-      }
-    } else {
-      this.script = sc.getScript();
-    }
+    this.script = new ArrayList<String>();
 
-    this.quoteList = new JList<String>(this.script);
+    final DefaultListModel listMod = new DefaultListModel<String>(); 
+    this.quoteList = new JList<String>(listMod);
     this.quoteList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    this.quoteList.setFixedCellHeight(16);
     final JScrollPane listScroller = new JScrollPane(this.quoteList);
     add(listScroller, BorderLayout.CENTER);
+
+    final SceneScriptHeaderPanel header = new SceneScriptHeaderPanel(this.quoteList, listMod);
+    add(header, BorderLayout.NORTH);
 
     setVisible(true);
   }
 
+  @Override
+  public Dimension getMinimumSize() {
+    return new Dimension(240, (int) super.getMinimumSize().getHeight());
+  }
 }
