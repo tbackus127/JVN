@@ -17,66 +17,72 @@ import com.rath.jvn.core.SpriteImageException;
  *
  */
 public class SpriteRegistry {
-
+  
   /** The symbol used to separate the sprite name in the registry. */
   private static final char SPRITE_NAME_SEPARATOR = '_';
-
+  
   /** The sprite map using the name as a key and the image as a value. */
   private static HashMap<String, BufferedImage> spriteMap = new HashMap<String, BufferedImage>();
-
+  
   /**
    * Registers a sprite with the system.
    * 
    * @param charName the character's name.
    * @param charEmote the character's emotion.
    * @param imgPath the path to the image file.
+   * @throws RegistryException if the sprite is already registered.
    */
-  public static void registerSprite(final String charName, final String charEmote, final String imgPath) {
+  public static final void registerSprite(final String charName, final String charEmote, final String imgPath)
+      throws RegistryException {
     final String key = getCombinedSpriteName(charName, charEmote);
+    
+    if (spriteMap.containsKey(key)) {
+      throw new RegistryException("sprite", key, true);
+    }
+    
     final File imgFile = new File(imgPath);
     BufferedImage val = null;
-
+    
     // Read the image in
     try {
       val = ImageIO.read(imgFile);
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
-
+    
     // Add to the map
     spriteMap.put(key, val);
-
+    
   }
-
+  
   /**
    * Gets a sprite by their name and emotion.
    * 
    * @param charName the name of the character.
    * @param charEmote the character's emotion.
    * @return the sprite as a BufferedImage.
-   * @throws SpriteNotRegisteredException
-   * @throws SpriteImageException
+   * @throws RegistryException if the sprite has not yet been registered.
+   * @throws SpriteImageException if there was an error reading the sprite into a BufferedImage.
    */
-  public static BufferedImage getSprite(final String charName, final String charEmote)
-      throws SpriteNotRegisteredException, SpriteImageException {
-
+  public static final BufferedImage getSprite(final String charName, final String charEmote)
+      throws RegistryException, SpriteImageException {
+    
     final String key = getCombinedSpriteName(charName, charEmote);
-
+    
     // Check if the sprite is registered
     if (!spriteMap.containsKey(key)) {
-      throw new SpriteNotRegisteredException(key);
+      throw new RegistryException("sprite", key, false);
     }
-
+    
     // Check for registry errors
     final BufferedImage img = spriteMap.get(key);
     if (img == null) {
       throw new SpriteImageException(key, img);
     }
-
+    
     return img;
   }
-
+  
   /**
    * Gets the combined String for use with the sprite map.
    * 

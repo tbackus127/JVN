@@ -2,7 +2,6 @@
 package com.rath.jvn.editor;
 
 import java.awt.Dimension;
-import java.awt.GridLayout;
 
 import javax.swing.JTabbedPane;
 
