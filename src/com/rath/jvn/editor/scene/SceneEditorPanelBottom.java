@@ -1,7 +1,6 @@
 
 package com.rath.jvn.editor.scene;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -31,7 +30,7 @@ public class SceneEditorPanelBottom extends JPanel {
 
     gb.gridx = 1;
     gb.weightx = 1.0D - gb.weightx;
-    this.quotePanel = new SceneEditorQuotePanel();
+    this.quotePanel = new SceneEditorQuotePanel("");
     add(this.quotePanel, gb);
   }
 }
