@@ -36,6 +36,7 @@ public class AnimationRegistry {
       throw new RegistryException("background", aniName, true);
     }
 
+    @SuppressWarnings("unused")
     final File aniFile = new File(aniDataPath);
 
     // TODO: Read animation data from file

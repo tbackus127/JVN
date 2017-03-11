@@ -16,11 +16,11 @@ public class TestGrisaiaScene {
       SpriteRegistry.registerSprite("Sachi", "Stare01", SpriteRegistry.NORMAL, "resx/img/sprites/Sachi/stare01.png");
       SpriteRegistry.registerSprite("Sachi", "Smile02", SpriteRegistry.NORMAL, "resx/img/sprites/Sachi/smile02.png");
       SpriteRegistry.registerSprite("Sachi", "Smile03", SpriteRegistry.NORMAL, "resx/img/sprites/Sachi/smile03.png");
-      SpriteRegistry.registerSprite("Michiru", "FEyesClosed01", SpriteRegistry.FACE,
+      SpriteRegistry.registerSprite("Michiru", "EyesClosed01", SpriteRegistry.FACE,
           "resx/img/sprites/Michiru/face-EyesClosed01.png");
       SpriteRegistry.registerSprite("Sachi", "Stare02", SpriteRegistry.NORMAL, "resx/img/sprites/Sachi/stare02.png");
-      SpriteRegistry.registerSprite("Michiru", "FCri", SpriteRegistry.FACE, "resx/img/sprites/Michiru/face-Cry.png");
-      SpriteRegistry.registerSprite("Michiru", "FCringe", SpriteRegistry.FACE,
+      SpriteRegistry.registerSprite("Michiru", "Cri", SpriteRegistry.FACE, "resx/img/sprites/Michiru/face-Cry.png");
+      SpriteRegistry.registerSprite("Michiru", "Cringe", SpriteRegistry.FACE,
           "resx/img/sprites/Michiru/face-Cringe.png");
 
       BackgroundRegistry.registerBG("DormHall", "resx/img/bg/dormHall.png");
@@ -48,13 +48,13 @@ public class TestGrisaiaScene {
     script[3] = "\\sel{Michiru}\\face{MichiruEyesClosed01}\\vox{S13-SunDairy}Stupid Yuuji... it's 'tsundere', not 'Sun Dairy'...";
     script[4] = "\\sel{Sachi}\\em{Stare02}\\vox{S13-PreSlapHmm}...";
     script[5] = "\\sel{Sachi}\\em{Stare02}\\vox{S13-WhereGoods}Where are the goods?";
-    script[6] = "\\sel{Michiru}\\sfx{Slap}\\face{MichiCringe}\\ani{FACE,QuickShake,false}\\vox{S13-Slapped01}Nnn...";
+    script[6] = "\\sel{Michiru}\\sfx{Slap}\\face{Cringe}\\ani{FACE,QuickShake,false}\\vox{S13-Slapped01}Nnn...";
     script[7] = "\\copy{5}";
-    script[8] = "\\sel{Michiru}\\sfx{Slap}\\face{MichiCringe}\\ani{FACE,QuickShake,false}\\vox{S13-Slapped02}Nnnnnn...";
+    script[8] = "\\sel{Michiru}\\sfx{Slap}\\face{Cringe}\\ani{FACE,QuickShake,false}\\vox{S13-Slapped02}Nnnnnn...";
     script[9] = "\\copy{5}";
-    script[10] = "\\sel{Michiru}\\sfx{Slap}\\face{MichiSurp}\\ani{FACE,VertShake,false}\\vox{S13-Slapped03}Hwaaugh! Sachi!?";
+    script[10] = "\\sel{Michiru}\\sfx{Slap}\\face{Surp}\\ani{FACE,VertShake,false}\\vox{S13-Slapped03}Hwaaugh! Sachi!?";
     script[11] = "\\copy{5}";
-    script[12] = "\\sel{Michiru}\\sfx{Slap}\\face{MichiSurp}\\ani{FACE,VertShake,false}\\vox{S13-Slapped04}Ow...\\p{400}\\sfx{Slap}\\face{MichiCri}\\ani{FACE,VertShake,false}Ouch!!";
+    script[12] = "\\sel{Michiru}\\sfx{Slap}\\face{Cry}\\ani{FACE,VertShake,false}\\vox{S13-Slapped04}Ow...\\p{400}\\sfx{Slap}\\ani{FACE,VertShake,false}Ouch!!";
     script[13] = "\\copy{5}";
 
     final SceneData d = new SceneData(scName, spriteCount, sprites, bgID, bgmID, qpos, script);

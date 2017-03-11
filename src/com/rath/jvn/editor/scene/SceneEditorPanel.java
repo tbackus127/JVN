@@ -37,6 +37,11 @@ public class SceneEditorPanel extends JSplitPane {
     this.setVisible(true);
   }
 
+  /**
+   * Sets whether or not this panel is visible and sets the divider location.
+   * 
+   * @param v true if visible; false if not.
+   */
   @Override
   public void setVisible(final boolean v) {
     super.setVisible(v);

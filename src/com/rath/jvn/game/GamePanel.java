@@ -22,6 +22,7 @@ public class GamePanel extends JPanel {
   private final Timer repaintTimer;
   
   /** The scene to render data from. */
+  @SuppressWarnings("unused")
   private Scene scene;
   
   public GamePanel(final Scene sc) {
