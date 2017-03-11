@@ -17,20 +17,20 @@ import javax.swing.KeyStroke;
  *
  */
 public class EditorMenuBar extends JMenuBar {
-
+  
   /** Serial version UID. */
   private static final long serialVersionUID = 1L;
-
+  
   /**
    * Default constructor.
    */
   public EditorMenuBar() {
     super();
-
+    
     // File
     final JMenu fileMenu = new JMenu("File");
     fileMenu.setMnemonic(KeyEvent.VK_F);
-
+    
     // File -> New Project
     final JMenuItem newProjItem = new JMenuItem("New Project");
     newProjItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
@@ -38,7 +38,7 @@ public class EditorMenuBar extends JMenuBar {
     newProjItem.getAccessibleContext()
         .setAccessibleDescription("Closes the currently running project and opens a new one.");
     fileMenu.add(newProjItem);
-
+    
     // File -> Open Project...
     final JMenuItem openProjItem = new JMenuItem("Open Project...");
     openProjItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
@@ -46,14 +46,14 @@ public class EditorMenuBar extends JMenuBar {
     openProjItem.getAccessibleContext()
         .setAccessibleDescription("Open a " + EditorFrame.PROGRAM_NAME + " project from file.");
     fileMenu.add(openProjItem);
-
+    
     // File -> Save Project
     final JMenuItem saveProjItem = new JMenuItem("Save Project");
     saveProjItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
     saveProjItem.setMnemonic(KeyEvent.VK_S);
     saveProjItem.getAccessibleContext().setAccessibleDescription("Saves all changes to the project.");
     fileMenu.add(saveProjItem);
-
+    
     // File -> Save Project As...
     final JMenuItem saveasProjItem = new JMenuItem("Save Project As...");
     saveasProjItem
@@ -61,46 +61,63 @@ public class EditorMenuBar extends JMenuBar {
     saveasProjItem.setMnemonic(KeyEvent.VK_V);
     saveasProjItem.getAccessibleContext().setAccessibleDescription("Saves the entire project to the specified file.");
     fileMenu.add(saveasProjItem);
-
+    
     fileMenu.addSeparator();
-
+    
     // File -> Close Project
     final JMenuItem closeProjItem = new JMenuItem("Close Project");
     closeProjItem.getAccessibleContext().setAccessibleDescription("Closes the project and exits the program.");
     closeProjItem.setMnemonic(KeyEvent.VK_X);
     closeProjItem.addActionListener(new ActionListener() {
-
+      
       @Override
       public void actionPerformed(ActionEvent evt) {
-
+        
         // TODO: Do something more elegant here (text box about saving work)
         System.exit(0);
       }
-
+      
     });
     fileMenu.add(closeProjItem);
-
+    
     add(fileMenu);
-
+    
     // Edit
     final JMenu editMenu = new JMenu("Edit");
     editMenu.setMnemonic(KeyEvent.VK_E);
-
+    
     final JMenuItem undoItem = new JMenuItem("Undo");
     undoItem.getAccessibleContext().setAccessibleDescription("Undo the latest change to the project.");
     undoItem.setMnemonic(KeyEvent.VK_Z);
     undoItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
     editMenu.add(undoItem);
-
+    
     final JMenuItem redoItem = new JMenuItem("Redo");
     redoItem.getAccessibleContext().setAccessibleDescription("Redo the last change that was un-did.");
     redoItem.setMnemonic(KeyEvent.VK_Y);
     redoItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y, ActionEvent.CTRL_MASK));
     editMenu.add(redoItem);
-
+    
     add(editMenu);
-
+    
+    // Scene
+    final JMenu sceneMenu = new JMenu("Scene");
+    sceneMenu.setMnemonic(KeyEvent.VK_S);
+    
+    final JMenuItem sceneOpenItem = new JMenuItem("Open Scene");
+    sceneOpenItem.getAccessibleContext().setAccessibleDescription("Open a scene for editing.");
+    sceneOpenItem.setMnemonic(KeyEvent.VK_O);
+    sceneMenu.add(sceneOpenItem);
+    
+    final JMenuItem scenePropsItem = new JMenuItem("Properties");
+    scenePropsItem.getAccessibleContext().setAccessibleDescription("Edit various properties of this scene.");
+    scenePropsItem.setMnemonic(KeyEvent.VK_P);
+    scenePropsItem.setEnabled(false);
+    sceneMenu.add(scenePropsItem);
+    
+    add(sceneMenu);
+    
     setVisible(true);
-
+    
   }
 }

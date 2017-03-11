@@ -16,10 +16,10 @@ import com.rath.jvn.editor.EditorFrame;
  *
  */
 public class SceneEditorPanel extends JSplitPane {
-
+  
   /** Serial version UID. */
   private static final long serialVersionUID = 1L;
-
+  
   /**
    * Default constructor.
    */
@@ -28,15 +28,15 @@ public class SceneEditorPanel extends JSplitPane {
     this.setOrientation(JSplitPane.VERTICAL_SPLIT);
     setOpaque(true);
     setBackground(Color.CYAN);
-
+    
     final SceneEditorPanelTop topPanel = new SceneEditorPanelTop(winSize);
     setTopComponent(topPanel);
-
+    
     final SceneEditorPanelBottom botPanel = new SceneEditorPanelBottom(winSize);
     setBottomComponent(botPanel);
     this.setVisible(true);
   }
-
+  
   /**
    * Sets whether or not this panel is visible and sets the divider location.
    * 
@@ -46,19 +46,19 @@ public class SceneEditorPanel extends JSplitPane {
   public void setVisible(final boolean v) {
     super.setVisible(v);
     SwingUtilities.invokeLater(new Runnable() {
-
+      
       @Override
       public void run() {
         setDividerLocation(EditorFrame.DIV_HORIZ_PERC);
       }
     });
   }
-
+  
   @Override
   public Dimension getPreferredSize() {
     return EditorFrame.PREFERRED_DIM;
   }
-
+  
   @Override
   public Dimension getMinimumSize() {
     return EditorFrame.MIN_DIM;

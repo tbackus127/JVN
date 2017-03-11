@@ -1,8 +1,10 @@
 
 package com.rath.jvn.game;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -58,6 +60,9 @@ public class GamePanel extends JPanel {
   
   @Override
   public void paintComponent(final Graphics g) {
+    final Graphics2D g2 = (Graphics2D) g;
     
+    g2.setColor(Color.BLACK);
+    g2.fillRect(0, 0, getWidth(), getHeight());
   }
 }
