@@ -25,6 +25,7 @@ public class SceneEditorScriptPanel extends JPanel {
   private static final long serialVersionUID = 1L;
 
   /** The scene's script. */
+  @SuppressWarnings("unused")
   private ArrayList<String> script;
 
   /** The scene's script box. */
@@ -43,7 +44,7 @@ public class SceneEditorScriptPanel extends JPanel {
 
     this.script = new ArrayList<String>();
 
-    final DefaultListModel listMod = new DefaultListModel<String>(); 
+    final DefaultListModel<String> listMod = new DefaultListModel<String>();
     this.quoteList = new JList<String>(listMod);
     this.quoteList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     this.quoteList.setFixedCellHeight(16);
