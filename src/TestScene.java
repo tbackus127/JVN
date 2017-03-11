@@ -14,9 +14,9 @@ public class TestScene {
     try {
       BackgroundRegistry.registerBG("NormalBG", "res/img/bg/testBG.png");
       BackgroundRegistry.registerBG("DarkBG", "res/img/bg/testBG2.png");
-      SpriteRegistry.registerSprite("Alien1", "norm", "res/img/sprites/ayylmao01.png");
-      SpriteRegistry.registerSprite("Alien1", "sad", "res/img/sprites/ayylmao02.png");
-      SpriteRegistry.registerSprite("Alien2", "sad", "res/img/sprites/ayylmao2-02.png");
+      SpriteRegistry.registerSprite("Alien1", "norm", SpriteRegistry.NORMAL, "res/img/sprites/ayylmao01.png");
+      SpriteRegistry.registerSprite("Alien1", "sad", SpriteRegistry.NORMAL, "res/img/sprites/ayylmao02.png");
+      SpriteRegistry.registerSprite("Alien2", "sad", SpriteRegistry.NORMAL, "res/img/sprites/ayylmao2-02.png");
     } catch (RegistryException e) {
       System.err.println(e.getMessage());
     }
