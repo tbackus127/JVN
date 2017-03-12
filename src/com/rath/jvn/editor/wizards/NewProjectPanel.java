@@ -1,5 +1,5 @@
 
-package com.rath.jvn.editor.options;
+package com.rath.jvn.editor.wizards;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -7,13 +7,13 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JPanel;
 
-public class ProjectPropertiesPanel extends JPanel {
+public class NewProjectPanel extends JPanel {
   
   private static final long serialVersionUID = 1L;
   
-  public ProjectPropertiesPanel() {
+  public NewProjectPanel() {
     super();
-    setPreferredSize(getPreferredSize());
+    setSize(getPreferredSize());
     setVisible(true);
     setLayout(new GridBagLayout());
     

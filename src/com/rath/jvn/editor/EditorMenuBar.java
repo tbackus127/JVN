@@ -10,6 +10,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
+import com.rath.jvn.editor.options.ProjectPropertiesFrame;
+import com.rath.jvn.editor.wizards.NewProjectFrame;
+
 /**
  * This class contains the menu bar for the program.
  * 
@@ -24,7 +27,7 @@ public class EditorMenuBar extends JMenuBar {
   /**
    * Default constructor.
    */
-  public EditorMenuBar() {
+  public EditorMenuBar(final EditorFrame parent) {
     super();
     
     // File
@@ -37,6 +40,16 @@ public class EditorMenuBar extends JMenuBar {
     newProjItem.setMnemonic(KeyEvent.VK_N);
     newProjItem.getAccessibleContext()
         .setAccessibleDescription("Closes the currently running project and opens a new one.");
+    newProjItem.addActionListener(new ActionListener() {
+      
+      @Override
+      public void actionPerformed(ActionEvent evt) {
+        
+        @SuppressWarnings("unused")
+        final NewProjectFrame npf = new NewProjectFrame(parent);
+      }
+      
+    });
     fileMenu.add(newProjItem);
     
     // File -> Open Project...
@@ -100,22 +113,26 @@ public class EditorMenuBar extends JMenuBar {
     
     add(editMenu);
     
-    // Scene
-    final JMenu sceneMenu = new JMenu("Scene");
-    sceneMenu.setMnemonic(KeyEvent.VK_S);
+    // Project
+    final JMenu projMenu = new JMenu("Project");
+    projMenu.setMnemonic(KeyEvent.VK_P);
     
-    final JMenuItem sceneOpenItem = new JMenuItem("Open Scene");
-    sceneOpenItem.getAccessibleContext().setAccessibleDescription("Open a scene for editing.");
-    sceneOpenItem.setMnemonic(KeyEvent.VK_O);
-    sceneMenu.add(sceneOpenItem);
+    final JMenuItem projPropsItem = new JMenuItem("Properties");
+    projPropsItem.getAccessibleContext().setAccessibleDescription("Set various options and parameters of the novel.");
+    projPropsItem.setMnemonic(KeyEvent.VK_P);
+    projPropsItem.addActionListener(new ActionListener() {
+      
+      @Override
+      public void actionPerformed(ActionEvent evt) {
+        
+        @SuppressWarnings("unused")
+        final ProjectPropertiesFrame ppf = new ProjectPropertiesFrame(parent);
+      }
+      
+    });
+    projMenu.add(projPropsItem);
     
-    final JMenuItem scenePropsItem = new JMenuItem("Properties");
-    scenePropsItem.getAccessibleContext().setAccessibleDescription("Edit various properties of this scene.");
-    scenePropsItem.setMnemonic(KeyEvent.VK_P);
-    scenePropsItem.setEnabled(false);
-    sceneMenu.add(scenePropsItem);
-    
-    add(sceneMenu);
+    add(projMenu);
     
     setVisible(true);
     

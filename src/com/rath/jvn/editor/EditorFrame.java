@@ -52,7 +52,7 @@ public class EditorFrame extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
     
-    final EditorMenuBar menuBar = new EditorMenuBar();
+    final EditorMenuBar menuBar = new EditorMenuBar(this);
     setJMenuBar(menuBar);
     
     final Dimension windowDim = this.getSize();
