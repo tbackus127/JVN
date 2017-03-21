@@ -3,32 +3,82 @@ package com.rath.jvn.core;
 
 import java.util.HashMap;
 
+/**
+ * This class contains the script mnemonics for commands.
+ * 
+ * @author Tim Backus tbackus127@gmail.com
+ *
+ */
 public class Commands {
 
+  /** Set background. */
   public static final String CMD_BG = "bg";
+
+  /** Set background music. */
   public static final String CMD_BGM = "bgm";
+
+  /** Play sound effect. */
   public static final String CMD_SFX = "sfx";
+
+  /** Play voice. */
   public static final String CMD_VOX = "vox";
+
+  /** Change the sprite of a character to another of their sprites. */
   public static final String CMD_CHG_SPR = "chsp";
+
+  /** Change the emotion of one character to another of their emotions. */
   public static final String CMD_CHG_EMO = "em";
+
+  /** Jump to the specified quote position. */
   public static final String CMD_JMP = "jmp";
+
+  /** Play a sprite animation. */
   public static final String CMD_ANI_SPR = "anis";
+
+  /** Play an animation on the entire screen. */
   public static final String CMD_ANI_SCR = "anic";
+
+  /** Show an image in the middle of the screen; it is treated as a sprite with ID="$PIC". */
   public static final String CMD_PIC = "pic";
+
+  /** Removes the displayed image from the screen. */
   public static final String CMD_RM_PIC = "delp";
+
+  /** Shows a character face image in the text box. */
   public static final String CMD_FACE = "face";
+
+  /**
+   * Sets the number of available sprite positions. Sprite positions will be divided equally along the horizontal axis
+   * of the game window, and centered.
+   */
   public static final String CMD_SPR_POS = "ssp";
+
+  /** Moves the specified character to the desired sprite position. */
   public static final String CMD_MV_SPR = "mvsp";
+
+  /** Selects the character that is currently talking. Also used to shorten many commands. */
   public static final String CMD_SEL = "sel";
+
+  /** Pause text advancement for a specified length of time, in milliseconds. */
   public static final String CMD_PAUSE = "p";
+
+  /** Set the value of a game variable. */
   public static final String CMD_VAR = "var";
+
+  /** Set the value of a game flag. */
   public static final String CMD_FLAG = "flg";
+
+  /** Stops the text from advancing until the player advances the text manually. */
   public static final String CMD_QB = "qb";
+
+  /** Performs choice branching. */
   public static final String CMD_CHOI = "choi";
 
   // Keep this static to avoid memory leaks and too many anonymous classes.
+  /** Commands and how many arguments they take. */
   public static final HashMap<String, Integer> COMMAND_RULES = new HashMap<String, Integer>() {
 
+    /** Serial version UID. */
     private static final long serialVersionUID = 1L;
 
     {

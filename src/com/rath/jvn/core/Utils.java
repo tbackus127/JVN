@@ -4,6 +4,12 @@ package com.rath.jvn.core;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+/**
+ * This class acts as a utility suite for various operations.
+ * 
+ * @author Tim Backus tbackus127@gmail.com
+ *
+ */
 public class Utils {
 
   /**

@@ -43,6 +43,7 @@ public class Scene extends AbstractScene implements Serializable {
    * Writes this scene's data to file.
    */
   public void writeScene() {
+    // TODO: Actually write scene data
     // this.data.writeToFile("scene/" + sceneName + ".jvnsc");
   }
 }
