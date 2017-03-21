@@ -34,7 +34,7 @@ public class TestScene {
     script[0] = "This is a normal message.";
     script[1] = "This is a longer message that will hopefully span more than one line. Here, I'll add another sentence in just so it does. Then I can test text wrapping with this one.";
     script[2] = "A quote break should happen here.\\qb{}This line should not appear until the text is advanced again.";
-    script[3] = "\\ts{10}This text is really fast.\\qb{}\\ts{100}This text is really slow.";
+    script[3] = "Multiple\\qb{} quote\\qb{} breaks.\\qb{}.\\qb{}.";
     script[4] = "\\name{Kebert Xela}Nameplate test.";
     script[5] = "Changing BG...\\qb{}\\bg{NormalBG}Changed.";
     script[6] = "Adding sprite.\\qb{}\\ssp{1}\\chsp{Alien1,norm,0}Alien1 added.";
