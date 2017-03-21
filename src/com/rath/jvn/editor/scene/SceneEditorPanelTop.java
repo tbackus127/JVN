@@ -7,8 +7,8 @@ import javax.swing.JSplitPane;
 import javax.swing.SwingUtilities;
 
 import com.rath.jvn.core.Scene;
+import com.rath.jvn.core.engine.GamePanel;
 import com.rath.jvn.editor.EditorFrame;
-import com.rath.jvn.game.GamePanel;
 
 /**
  * 

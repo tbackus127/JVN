@@ -2,10 +2,10 @@ import java.awt.Dimension;
 
 import com.rath.jvn.core.Scene;
 import com.rath.jvn.core.SceneData;
+import com.rath.jvn.core.engine.GameFrame;
 import com.rath.jvn.core.registry.BackgroundRegistry;
 import com.rath.jvn.core.registry.RegistryException;
 import com.rath.jvn.core.registry.SpriteRegistry;
-import com.rath.jvn.game.GameFrame;
 
 public class TestScene {
 

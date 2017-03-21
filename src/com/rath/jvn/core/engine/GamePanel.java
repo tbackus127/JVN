@@ -1,5 +1,5 @@
 
-package com.rath.jvn.game;
+package com.rath.jvn.core.engine;
 
 import java.awt.Color;
 import java.awt.Dimension;

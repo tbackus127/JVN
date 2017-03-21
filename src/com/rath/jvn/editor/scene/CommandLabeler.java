@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class CommandInterpreter {
+public class CommandLabeler {
   
   public static final String BAD_COMMAND_LABEL = "!! BAD COMMAND !!";
   public static final String REGEX_SPLITTER = "(?<!\\\\)}";
