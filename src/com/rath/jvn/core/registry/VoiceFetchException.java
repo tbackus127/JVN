@@ -1,15 +1,15 @@
 
-package com.rath.jvn.core;
+package com.rath.jvn.core.registry;
 
 import java.io.File;
 
-public class VoiceException extends Exception {
+public class VoiceFetchException extends Exception {
 
   private static final long serialVersionUID = 1L;
   private final String voxKey;
   private final File voxFile;
 
-  public VoiceException(final String vk, final File vf) {
+  public VoiceFetchException(final String vk, final File vf) {
     this.voxKey = vk;
     this.voxFile = vf;
   }

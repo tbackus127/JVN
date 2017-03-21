@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import com.rath.jvn.core.Scene;
+import com.rath.jvn.core.data.Scene;
 
 public class GamePanel extends JPanel {
   

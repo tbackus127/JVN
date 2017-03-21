@@ -4,9 +4,7 @@ package com.rath.jvn.core.registry;
 import java.io.File;
 import java.util.HashMap;
 
-import com.rath.jvn.core.AnimationException;
-import com.rath.jvn.core.SpriteAnimation;
-import com.rath.jvn.core.SpriteImageException;
+import com.rath.jvn.core.data.SpriteAnimation;
 
 public class AnimationRegistry {
 
@@ -57,10 +55,10 @@ public class AnimationRegistry {
    * @param bgName
    * @return
    * @throws RegistryException
-   * @throws AnimationException
+   * @throws AnimationFetchException
    */
   public static final SpriteAnimation getSprite(final String aniName)
-      throws RegistryException, SpriteImageException, AnimationException {
+      throws RegistryException, SpriteFetchException, AnimationFetchException {
 
     // Check if the BG is registered
     if (!aniMap.containsKey(aniName)) {
@@ -70,7 +68,7 @@ public class AnimationRegistry {
     // Check for registry errors
     final SpriteAnimation ani = aniMap.get(aniName);
     if (ani == null) {
-      throw new AnimationException(aniName, ani);
+      throw new AnimationFetchException(aniName, ani);
     }
 
     return ani;

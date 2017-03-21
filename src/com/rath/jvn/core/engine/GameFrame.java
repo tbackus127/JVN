@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import com.rath.jvn.core.Scene;
+import com.rath.jvn.core.data.Scene;
 
 public class GameFrame extends JFrame {
   

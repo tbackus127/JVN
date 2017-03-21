@@ -8,8 +8,6 @@ import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
-import com.rath.jvn.core.SpriteImageException;
-
 public class BackgroundRegistry {
   
   private static final HashMap<String, BufferedImage> bgMap = new HashMap<String, BufferedImage>();
@@ -48,9 +46,9 @@ public class BackgroundRegistry {
    * @param bgName
    * @return
    * @throws RegistryException
-   * @throws SpriteImageException
+   * @throws SpriteFetchException
    */
-  public static final BufferedImage getSprite(final String bgName) throws RegistryException, SpriteImageException {
+  public static final BufferedImage getSprite(final String bgName) throws RegistryException, SpriteFetchException {
     
     // Check if the BG is registered
     if (!bgMap.containsKey(bgName)) {
@@ -60,7 +58,7 @@ public class BackgroundRegistry {
     // Check for registry errors
     final BufferedImage img = bgMap.get(bgName);
     if (img == null) {
-      throw new SpriteImageException(bgName, img);
+      throw new SpriteFetchException(bgName, img);
     }
     
     return img;

@@ -1,5 +1,5 @@
 
-package com.rath.jvn.core;
+package com.rath.jvn.core.data;
 
 /**
  * This class serves as a struct for a Scene's data.
@@ -13,19 +13,19 @@ public class SceneData {
   private final String sceneName;
 
   /** The maximum number of sprite positions. */
-  private final int spriteCount;
+  private int spriteCount;
 
   /** The sprites currently in the scene. */
-  private final int[] sprites;
+  private int[] sprites;
 
   /** The currently displayed background ID. */
-  private final int bgID;
+  private int bgID;
 
   /** The currently playing background music ID. */
-  private final int bgmID;
+  private int bgmID;
 
   /** The current script position. */
-  private final int currentQuote;
+  private String currentQuote;
 
   /** The script of the scene. */
   private final String[] script;
@@ -41,15 +41,14 @@ public class SceneData {
    * @param q the current line of the script.
    * @param scr the script.
    */
-  public SceneData(final String n, final int sc, final int[] sp, final int bg, final int bgm, final int q,
-      final String[] scr) {
+  public SceneData(final String n, final int sc, final int[] sp, final int bg, final int bgm, final String[] scr) {
 
     this.sceneName = n;
     this.spriteCount = sc;
     this.sprites = sp;
     this.bgID = bg;
     this.bgmID = bgm;
-    this.currentQuote = q;
+    this.currentQuote = "";
     this.script = scr;
   }
 
@@ -103,7 +102,7 @@ public class SceneData {
    * 
    * @return an int.
    */
-  public int getCurrentQuote() {
+  public String getCurrentQuote() {
     return currentQuote;
   }
 

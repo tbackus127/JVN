@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
-import com.rath.jvn.core.Scene;
+import com.rath.jvn.core.data.Scene;
 
 /**
  * This panel will contain the current open scene's script.

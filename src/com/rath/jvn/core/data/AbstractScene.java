@@ -1,5 +1,5 @@
 
-package com.rath.jvn.core;
+package com.rath.jvn.core.data;
 
 import java.io.Serializable;
 

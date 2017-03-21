@@ -8,8 +8,6 @@ import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
-import com.rath.jvn.core.SpriteImageException;
-
 /**
  * This class handles registering sprites and fetching them by name instead of ID or filename.
  * 
@@ -74,10 +72,10 @@ public class SpriteRegistry {
    * @param charEmote the character's emotion.
    * @return the sprite as a BufferedImage.
    * @throws RegistryException if the sprite has not yet been registered.
-   * @throws SpriteImageException if there was an error reading the sprite into a BufferedImage.
+   * @throws SpriteFetchException if there was an error reading the sprite into a BufferedImage.
    */
   public static final BufferedImage getSprite(final String charName, final String charEmote)
-      throws RegistryException, SpriteImageException {
+      throws RegistryException, SpriteFetchException {
 
     final String key = getCombinedSpriteName(charName, charEmote);
 
@@ -89,7 +87,7 @@ public class SpriteRegistry {
     // Check for registry errors
     final BufferedImage img = spriteMap.get(key);
     if (img == null) {
-      throw new SpriteImageException(key, img);
+      throw new SpriteFetchException(key, img);
     }
 
     return img;

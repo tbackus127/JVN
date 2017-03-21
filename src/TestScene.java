@@ -1,7 +1,7 @@
 import java.awt.Dimension;
 
-import com.rath.jvn.core.Scene;
-import com.rath.jvn.core.SceneData;
+import com.rath.jvn.core.data.Scene;
+import com.rath.jvn.core.data.SceneData;
 import com.rath.jvn.core.engine.GameFrame;
 import com.rath.jvn.core.registry.BackgroundRegistry;
 import com.rath.jvn.core.registry.RegistryException;
@@ -29,7 +29,6 @@ public class TestScene {
     sprites[1] = -1;
     final int bgID = -1;
     final int bgmID = -1;
-    final int qpos = 0;
     final String[] script = new String[9];
     script[0] = "This is a normal message.";
     script[1] = "This is a longer message that will hopefully span more than one line. Here, I'll add another sentence in just so it does. Then I can test text wrapping with this one.";
@@ -40,7 +39,7 @@ public class TestScene {
     script[6] = "Adding sprite.\\qb{}\\ssp{1}\\chsp{Alien1,norm,0}Alien1 added.";
     script[7] = "Changing emote.\\qb{}\\chse{Alien1,sad}Alien1 is now sad.";
     script[8] = "Adding alien #2.\\qb{}\\ssp{2}\\chsp{Alien2,sad}Alien 2 added.";
-    final SceneData d = new SceneData(scName, spriteCount, sprites, bgID, bgmID, qpos, script);
+    final SceneData d = new SceneData(scName, spriteCount, sprites, bgID, bgmID, script);
     final Scene s = new Scene(d);
 
     @SuppressWarnings("unused")

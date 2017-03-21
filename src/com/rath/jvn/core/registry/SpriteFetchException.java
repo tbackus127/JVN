@@ -1,15 +1,15 @@
 
-package com.rath.jvn.core;
+package com.rath.jvn.core.registry;
 
 import java.awt.image.BufferedImage;
 
-public class SpriteImageException extends Exception {
+public class SpriteFetchException extends Exception {
 
   private static final long serialVersionUID = 1L;
   private final String spriteKey;
   private final BufferedImage spriteImg;
 
-  public SpriteImageException(final String sk, final BufferedImage img) {
+  public SpriteFetchException(final String sk, final BufferedImage img) {
     this.spriteKey = sk;
     this.spriteImg = img;
   }
