@@ -48,7 +48,7 @@ public class BackgroundRegistry {
    * @throws RegistryException
    * @throws SpriteFetchException
    */
-  public static final BufferedImage getSprite(final String bgName) throws RegistryException, SpriteFetchException {
+  public static final BufferedImage getBackground(final String bgName) throws RegistryException, SpriteFetchException {
     
     // Check if the BG is registered
     if (!bgMap.containsKey(bgName)) {

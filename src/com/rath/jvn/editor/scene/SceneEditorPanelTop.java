@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JSplitPane;
 import javax.swing.SwingUtilities;
 
+import com.rath.jvn.core.data.GameSettings;
 import com.rath.jvn.core.data.Scene;
 import com.rath.jvn.core.engine.GamePanel;
 import com.rath.jvn.editor.EditorFrame;
@@ -25,7 +26,7 @@ public class SceneEditorPanelTop extends JSplitPane {
     final SceneEditorScriptPanel scrPanel = new SceneEditorScriptPanel(winSize);
     setLeftComponent(scrPanel);
     
-    final GamePanel gPanel = new GamePanel(new Scene(null));
+    final GamePanel gPanel = new GamePanel(new GameSettings(winSize), new Scene(null));
     setRightComponent(gPanel);
     
     this.setVisible(true);

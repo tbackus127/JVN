@@ -30,8 +30,12 @@ public class Scene extends AbstractScene implements Serializable {
    * Gets the current data for this scene.
    * 
    * @return a SceneData object.
+   * @throws SceneDataMissingException
    */
-  public final SceneData getData() {
+  public final SceneData getData() throws SceneDataMissingException {
+    if (this.data == null) {
+      throw new SceneDataMissingException();
+    }
     return this.data;
   }
 

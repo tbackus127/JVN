@@ -16,13 +16,13 @@ public class SceneData {
   private int spriteCount;
 
   /** The sprites currently in the scene. */
-  private int[] sprites;
+  private String[] sprites;
 
   /** The currently displayed background ID. */
-  private int bgID;
+  private String bgID;
 
   /** The currently playing background music ID. */
-  private int bgmID;
+  private String bgmID;
 
   /** The current script position. */
   private String currentQuote;
@@ -41,7 +41,7 @@ public class SceneData {
    * @param q the current line of the script.
    * @param scr the script.
    */
-  public SceneData(final String n, final int sc, final int[] sp, final int bg, final int bgm, final String[] scr) {
+  public SceneData(final String n, final int sc, final String[] sp, final String bg, final String bgm, final String[] scr) {
 
     this.sceneName = n;
     this.spriteCount = sc;
@@ -75,7 +75,7 @@ public class SceneData {
    * 
    * @return an array with the indexes of sprite IDs representing their respective positions on screen.
    */
-  public int[] getSprites() {
+  public String[] getSprites() {
     return sprites;
   }
 
@@ -84,7 +84,7 @@ public class SceneData {
    * 
    * @return an int.
    */
-  public int getBgID() {
+  public String getBgID() {
     return bgID;
   }
 
@@ -93,7 +93,7 @@ public class SceneData {
    * 
    * @return an int.
    */
-  public int getBgmID() {
+  public String getBgmID() {
     return bgmID;
   }
 

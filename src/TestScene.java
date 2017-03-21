@@ -24,18 +24,18 @@ public class TestScene {
 
     final String scName = "Test Scene";
     final int spriteCount = 2;
-    final int[] sprites = new int[2];
-    sprites[0] = -1;
-    sprites[1] = -1;
-    final int bgID = -1;
-    final int bgmID = -1;
+    final String[] sprites = new String[spriteCount];
+    sprites[0] = null;
+    sprites[1] = null;
+    final String bgID = "NormalBG";
+    final String bgmID = null;
     final String[] script = new String[9];
     script[0] = "This is a normal message.";
     script[1] = "This is a longer message that will hopefully span more than one line. Here, I'll add another sentence in just so it does. Then I can test text wrapping with this one.";
     script[2] = "A quote break should happen here.\\qb{}This line should not appear until the text is advanced again.";
     script[3] = "Multiple\\qb{} quote\\qb{} breaks.\\qb{}.\\qb{}.";
     script[4] = "\\name{Kebert Xela}Nameplate test.";
-    script[5] = "Changing BG...\\qb{}\\bg{NormalBG}Changed.";
+    script[5] = "Changing BG...\\qb{}\\bg{DarkBG}Changed.";
     script[6] = "Adding sprite.\\qb{}\\ssp{1}\\chsp{Alien1,norm,0}Alien1 added.";
     script[7] = "Changing emote.\\qb{}\\chse{Alien1,sad}Alien1 is now sad.";
     script[8] = "Adding alien #2.\\qb{}\\ssp{2}\\chsp{Alien2,sad}Alien 2 added.";
@@ -44,5 +44,7 @@ public class TestScene {
 
     @SuppressWarnings("unused")
     final GameFrame f = new GameFrame(s, "JVN - Test Scene", new Dimension(800, 600));
+    f.render();
+    
   }
 }
